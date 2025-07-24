@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fursure - Pet Insurance</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e8b5e6f0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <h1>🐾 Fursure</h1>
+    <p>Malaysia’s Most Pawsome Pet Insurance</p>
+    <a href="#quote" class="quote-btn">Get a Quote</a>
+  </header>
+
+  <!-- Brand Logos -->
+  <section class="brands">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Petco_Logo.svg" alt="Petco">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Royal_Canin_logo.png" alt="Royal Canin">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Hill%27s_Pet_Nutrition_logo.svg" alt="Hill's">
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose Fursure?</h2>
+    <ul>
+      <li><i class="fas fa-shield-dog"></i> Flexible plans for any age or breed</li>
+      <li><i class="fas fa-microchip"></i> Cashless vet visits with microchip billing</li>
+      <li><i class="fas fa-bone"></i> Covers food poisoning, pre-existing conditions & third-party damages</li>
+      <li><i class="fas fa-mobile-alt"></i> Easy claims & medical tracking via app</li>
+    </ul>
+  </section>
+
+  <!-- Plans -->
+  <section class="plans">
+    <h2>Our Plans</h2>
+    <div class="plan-grid">
+      <div class="plan-card basic">
+        <h3>Basic</h3>
+        <p>Essential protection for healthy young pets.</p>
+        <ul>
+          <li>✔ Vet visits (RM 1,000/year)</li>
+          <li>✔ Accident coverage</li>
+          <li>✔ Free app access</li>
+        </ul>
+        <p class="price">From RM24/mo</p>
+      </div>
+      <div class="plan-card comprehensive">
+        <h3>Comprehensive</h3>
+        <p>For growing pets with some health needs.</p>
+        <ul>
+          <li>✔ Everything in Basic</li>
+          <li>✔ Illness treatment</li>
+          <li>✔ Microchip integration</li>
+        </ul>
+        <p class="price">From RM38/mo</p>
+      </div>
+      <div class="plan-card premium">
+        <h3>Premium</h3>
+        <p>The full pampered pet experience.</p>
+        <ul>
+          <li>✔ Everything in Comprehensive</li>
+          <li>✔ Pre-existing coverage</li>
+          <li>✔ Food poisoning & wellness checks</li>
+        </ul>
+        <p class="price">From RM52/mo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote">
+    <h2>Get a Quote</h2>
+    <form id="quoteForm">
+      <label for="animal">Animal Type:</label>
+      <select id="animal" name="animal">
+        <option value="">-- Select Animal --</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Rabbit">Rabbit</option>
+        <option value="Bird">Bird</option>
+      </select>
+
+      <label for="breed">Breed:</label>
+      <select id="breed" name="breed" disabled>
+        <option value="">-- Select Breed --</option>
+      </select>
+
+      <label for="age">Pet Age:</label>
+      <select id="age" name="age">
+        <option value="0-1">0–1 year</option>
+        <option value="2-4">2–4 years</option>
+        <option value="5-7">5–7 years</option>
+        <option value="8+">8+ years</option>
+      </select>
+
+      <label for="plan">Plan Type:</label>
+      <select id="plan" name="plan">
+        <option value="Basic">Basic</option>
+        <option value="Comprehensive">Comprehensive</option>
+        <option value="Premium">Premium</option>
+      </select>
+
+      <button type="button" onclick="calculateQuote()">Calculate Quote</button>
+    </form>
+    <div id="quoteResult"></div>
+  </section>
+
+  <!-- Contact Us -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Floating Chatbot -->
+  <div class="chatbot">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="PetBot" />
+    <span>Need help? Woof at us!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Fursure Malaysia. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
