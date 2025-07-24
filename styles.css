@@ -1,0 +1,40 @@
+const breedData = {
+  Dog: ["Golden Retriever", "Poodle", "Bulldog", "Shih Tzu", "German Shepherd", "Chihuahua", "Beagle"],
+  Cat: ["Persian", "Maine Coon", "Siamese", "British Shorthair", "Ragdoll", "Bengal", "Sphynx"],
+  Rabbit: ["Holland Lop", "Netherland Dwarf", "Flemish Giant", "Mini Rex", "Lionhead"],
+  Bird: ["Budgerigar", "Cockatiel", "African Grey", "Canary", "Lovebird", "Macaw"]
+};
+
+document.getElementById("animal").addEventListener("change", function () {
+  const animal = this.value;
+  const breedSelect = document.getElementById("breed");
+  breedSelect.innerHTML = '<option value="">-- Select Breed --</option>';
+
+  if (breedData[animal]) {
+    breedData[animal].forEach(breed => {
+      const option = document.createElement("option");
+      option.value = breed;
+      option.textContent = breed;
+      breedSelect.appendChild(option);
+    });
+    breedSelect.disabled = false;
+  } else {
+    breedSelect.disabled = true;
+  }
+});
+
+function calculateQuote() {
+  const plan = document.getElementById("plan").value;
+  const age = document.getElementById("age").value;
+
+  let base = 24;
+  if (plan === "Comprehensive") base += 15;
+  if (plan === "Premium") base += 30;
+  if (age === "5-7") base += 10;
+  if (age === "8+") base += 20;
+
+  document.getElementById("quoteResult").innerHTML = `
+    <p><strong>Your estimated monthly quote:</strong> RM ${base.toFixed(2)}</p>
+    <p>This includes flexible vet coverage, microchip access, and app support.</p>
+  `;
+}
